@@ -15,32 +15,11 @@ const mascotas = [
     },
     {
         id: 3,
-        nombre: "Rocky",
+        nombre: "Roca",
         tipo: "Perro",
         raza: "Bulldog",
         foto_url: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Racib%C3%B3rz_2007_082.jpg"
-    },
-    {
-        id: 4,
-        nombre: "Nala",
-        tipo: "Gato",
-        raza: "Persa",
-        foto_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR73vrKgTAIPDvewfxJENo3XptLGFATb5bqkqKxBsCl4Fw6ut5IIeTc0FCn034X9dEKpDvAi0kesFaTzguV7PSnuaXGoOf_SYD2lr92aBg&s=10"
-    },
-    {
-        id: 5,
-        nombre: "Kira",
-        tipo: "Perro",
-        raza: "Pastor Alemán",
-        foto_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu39UCTdnguI2u4KkAcKjmuXzZ-VsNiPbKsQvyEj4JJsmk_6aKIbCmszrSB63KbgLZ8m0gxOF5xwoCVONUzWQmbTgNAsDeWd35P8qgGg&s=10"
-    },
-    {
-        id: 6,
-        nombre: "Eros",
-        tipo: "Perro",
-        raza: "Schnauzer",
-        foto_url: "https://eu-central-1.graphassets.com/AnwjgMYRvQfWK3bRPjoq3z/resize=height:608,width:1080/output=format:webp/QELJBOaHSBizTQF2B72s"
-    },
+    }
 ];
 
 export const getMascotas = (req, res) => {

@@ -24,15 +24,15 @@ Content-Type: application/json
 }
 
 ### Actualizar mascota
-PUT http://localhost:3001/api/mascotas/1
+PUT http://localhost:3001/api/mascotas/7
 Content-Type: application/json
 
 {
-    "nombre": "Luna",
+    "nombre": "Rexa",
     "tipo": "Perro",
     "raza": "Chihuahua Mini",
     "foto_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh62o_CTrZm_Pph47OZfRRbB-TC4KoEApWj3-A76B7LfS9wdaVAJpjZh9W80txbuIQn79HIqP3AJJhxyFOE0ZgSbyMArdAdAfguPFFOQ&s=10"
 }
 
 ### Eliminar mascota
-DELETE http://localhost:3001/api/mascotas/6
+DELETE http://localhost:3001/api/mascotas/8

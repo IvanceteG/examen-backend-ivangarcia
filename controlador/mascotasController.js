@@ -33,7 +33,14 @@ const mascotas = [
         tipo: "Perro",
         raza: "Pastor Alemán",
         foto_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu39UCTdnguI2u4KkAcKjmuXzZ-VsNiPbKsQvyEj4JJsmk_6aKIbCmszrSB63KbgLZ8m0gxOF5xwoCVONUzWQmbTgNAsDeWd35P8qgGg&s=10"
-    }
+    },
+    {
+        id: 6,
+        nombre: "Eros",
+        tipo: "Perro",
+        raza: "Schnauzer",
+        foto_url: "https://eu-central-1.graphassets.com/AnwjgMYRvQfWK3bRPjoq3z/resize=height:608,width:1080/output=format:webp/QELJBOaHSBizTQF2B72s"
+    },
 ];
 
 const getMascotas = (req, res) => {

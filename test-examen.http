@@ -1,0 +1,17 @@
+GET http://localhost:3001/api
+
+########
+
+GET http://localhost:3001/api/mascotas
+
+
+########
+
+
+GET http://localhost:3001/api/mascotas/1
+
+
+
+##########
+
+GET http://localhost:3001/api/mascotas/6

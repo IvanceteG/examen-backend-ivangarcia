@@ -35,18 +35,48 @@ const mascotas = [
         foto_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu39UCTdnguI2u4KkAcKjmuXzZ-VsNiPbKsQvyEj4JJsmk_6aKIbCmszrSB63KbgLZ8m0gxOF5xwoCVONUzWQmbTgNAsDeWd35P8qgGg&s=10"
     }
 ];
+
 const getMascotas = (req, res) => {
-    res.json({ mascotas: mascotas, total: mascotas.length });
+    res.json({ mascotas: mascotas });
 };
+
 const getMascotaById = (req, res) => {
-  const { id } = req.params;
-  const mascota = mascotas.find(m => m.id === Number(id));
-  if (!mascota) {
-    return res.status(404).json({ error: 'Mascota no encontrada', id });
-  }
-  res.json(mascota);
+    const { id } = req.params;
+    const mascota = mascotas.find(m => m.id === Number(id));
+    if (!mascota) {
+        return res.status(404).json({ error: 'Mascota no encontrada', id });
+    }
+    res.json(mascota);
+};
+
+const createMascota = (req, res) => {
+    const { nombre, tipo, raza, foto_url } = req.body;
+    const id = mascotas.length + 1;
+    const nueva = { id, nombre, tipo, raza, foto_url };
+    mascotas.push(nueva);
+    res.status(201).json(nueva);
+};
+
+const updateMascota = (req, res) => {
+    const { id } = req.params;
+    const index = mascotas.findIndex(m => m.id === Number(id));
+    if (index === -1) {
+        return res.status(404).json({ error: 'Mascota no encontrada', id });
+    }
+    mascotas[index] = { ...mascotas[index], ...req.body, id: Number(id) };
+    res.json(mascotas[index]);
+};
+
+const deleteMascota = (req, res) => {
+    const { id } = req.params;
+    const index = mascotas.findIndex(m => m.id === Number(id));
+    if (index === -1) {
+        return res.status(404).json({ error: 'Mascota no encontrada', id });
+    }
+    mascotas.splice(index, 1);
+    res.status(204).send();
 };
 
 export {
-    getMascotas, getMascotaById
+    getMascotas, getMascotaById, createMascota, updateMascota, deleteMascota
 };

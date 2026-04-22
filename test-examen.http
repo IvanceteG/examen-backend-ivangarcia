@@ -4,19 +4,36 @@ GET http://localhost:3001/api
 
 GET http://localhost:3001/api/mascotas
 
-
 ########
 
-
 GET http://localhost:3001/api/mascotas/1
-
-
 
 ##########
 
 GET http://localhost:3001/api/mascotas/6
 
 
-#########
+### Crear mascota
+POST http://localhost:3001/api/mascotas
+Content-Type: application/json
 
-GET https://examen-backend-ivangarcia.onrender.com/api/mascotas
+{
+    "nombre": "Rex",
+    "tipo": "Perro",
+    "raza": "Labrador",
+    "foto_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Labrador_on_Quantock_%282175262184%29.jpg"
+}
+
+### Actualizar mascota
+PUT http://localhost:3001/api/mascotas/1
+Content-Type: application/json
+
+{
+    "nombre": "Luna",
+    "tipo": "Perro",
+    "raza": "Chihuahua Mini",
+    "foto_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh62o_CTrZm_Pph47OZfRRbB-TC4KoEApWj3-A76B7LfS9wdaVAJpjZh9W80txbuIQn79HIqP3AJJhxyFOE0ZgSbyMArdAdAfguPFFOQ&s=10"
+}
+
+### Eliminar mascota
+DELETE http://localhost:3001/api/mascotas/6

@@ -6,12 +6,11 @@ GET http://localhost:3001/api/mascotas
 
 ########
 
-GET http://localhost:3001/api/mascotas/1
+GET http://localhost:3001/api/mascotas/2
 
 ##########
 
 GET http://localhost:3001/api/mascotas/6
-
 
 ### Crear mascota
 POST http://localhost:3001/api/mascotas

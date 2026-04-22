@@ -43,47 +43,32 @@ const mascotas = [
     },
 ];
 
-const getMascotas = (req, res) => {
+export const getMascotas = (req, res) => {
     res.json({ mascotas: mascotas });
 };
 
-const getMascotaById = (req, res) => {
-    const { id } = req.params;
-    const mascota = mascotas.find(m => m.id === Number(id));
-    if (!mascota) {
-        return res.status(404).json({ error: 'Mascota no encontrada', id });
-    }
+export const getMascotaById = (req, res) => {
+    const mascota = mascotas.find(m => m.id == req.params.id);
+    if (!mascota) return res.status(404).json({ error: 'Mascota no encontrada' });
     res.json(mascota);
 };
 
-const createMascota = (req, res) => {
-    const { nombre, tipo, raza, foto_url } = req.body;
-    const id = mascotas.length + 1;
-    const nueva = { id, nombre, tipo, raza, foto_url };
+export const createMascota = (req, res) => {
+    const nueva = { id: mascotas.length + 1, ...req.body };
     mascotas.push(nueva);
     res.status(201).json(nueva);
 };
 
-const updateMascota = (req, res) => {
-    const { id } = req.params;
-    const index = mascotas.findIndex(m => m.id === Number(id));
-    if (index === -1) {
-        return res.status(404).json({ error: 'Mascota no encontrada', id });
-    }
-    mascotas[index] = { ...mascotas[index], ...req.body, id: Number(id) };
+export const updateMascota = (req, res) => {
+    const index = mascotas.findIndex(m => m.id == req.params.id);
+    if (index === -1) return res.status(404).json({ error: 'Mascota no encontrada' });
+    mascotas[index] = { ...mascotas[index], ...req.body };
     res.json(mascotas[index]);
 };
 
-const deleteMascota = (req, res) => {
-    const { id } = req.params;
-    const index = mascotas.findIndex(m => m.id === Number(id));
-    if (index === -1) {
-        return res.status(404).json({ error: 'Mascota no encontrada', id });
-    }
+export const deleteMascota = (req, res) => {
+    const index = mascotas.findIndex(m => m.id == req.params.id);
+    if (index === -1) return res.status(404).json({ error: 'Mascota no encontrada' });
     mascotas.splice(index, 1);
     res.status(204).send();
-};
-
-export {
-    getMascotas, getMascotaById, createMascota, updateMascota, deleteMascota
 };

@@ -8,10 +8,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
   res.json({
     missatge: 'API de Mascotas',
-    endpoints: ['/api', '/api/mascotas', '/api/mascotas/id']
+    endpoints: ['/api/mascotas', '/api/mascotas/id']
   });
 });
 

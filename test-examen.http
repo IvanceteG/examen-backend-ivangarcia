@@ -17,8 +17,8 @@ POST http://localhost:3001/api/mascotas
 Content-Type: application/json
 
 {
-    "nombre": "Rex",
-    "tipo": "Perro",
+    "nombre": "Paco",
+    "tipo": "Gato",
     "raza": "Labrador",
     "foto_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Labrador_on_Quantock_%282175262184%29.jpg"
 }
